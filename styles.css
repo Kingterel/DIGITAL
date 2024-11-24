@@ -13,7 +13,8 @@ body {
     height: 300px;
     background: #fff;
     border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 15px dashed #66a6ff;
+    box-shadow: 0 4px 8px rgba(25, 109, 188, 0.2);
 }
 
 .clock .clock-numbers {
@@ -27,11 +28,26 @@ body {
 
 .clock .number {
     position: absolute;
-    color: #333;
-    font-size: 1.2rem;
-    font-weight: bold;
+    top: 5%;
     transform-origin: center;
-    transform: rotate(calc(var(--i) * 30deg)) translate(0, -135px);
+    transform: rotate(calc(var(--i) * 30deg));
+}
+
+.clock .number span {
+    position: absolute;
+    top: -140px;
+    left: 50%;
+    transform: translateX(-50%) rotate(calc(var(--i) * -30deg));
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.clock .bold-number span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    color: black;
 }
 
 .clock .hour-hand,
@@ -41,7 +57,9 @@ body {
     background: #000;
     border-radius: 50px;
     transform-origin: bottom center;
-    transform: rotate(90deg);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%) rotate(90deg);
 }
 
 .clock .hour-hand {
@@ -64,6 +82,8 @@ body {
     background: red;
     top: 40px;
     left: 149px;
+    transition: transform 0.1s cubic-bezier(0.4, 0.0, 0.2, 1);
+
 }
 
 .clock .center-dot {
@@ -74,4 +94,56 @@ body {
     border-radius: 50%;
     top: 145px;
     left: 145px;
+}
+
+/* .name-container {
+    margin-top: 50%;
+    margin-left: 40%;
+    width: 30%;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.name-container p {
+    text-align: center;
+} */
+
+
+.name-container {
+    padding: 20px 40px;
+    border-radius: 50%;
+    text-align: center;
+    width: 10%;
+    margin-top: 45%;
+    margin-left: 30%;
+    height: 10px;
+    /* border: 5px dotted #66a6ff; */
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+    box-shadow: 0 10px 0px rgba(0, 0, 0, 0.2);
+    animation: glow 3s ease-in-out infinite;
+}
+
+.name-container p {
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+}
+
+/* Add some animation for glow effect */
+@keyframes glow {
+    0% {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 10px 30px rgba(102, 166, 255, 0.6);
+    }
+
+    100% {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
 }
