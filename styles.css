@@ -79,7 +79,7 @@ body {
 .clock .second-hand {
     height: 110px;
     width: 2px;
-    background: red;
+    background: black;
     top: 40px;
     left: 149px;
     transition: transform 0.1s cubic-bezier(0.4, 0.0, 0.2, 1);
